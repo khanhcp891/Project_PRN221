@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Project_PRN221.styles.css" asp-append-version="true" />
+</head>
+
+<style>
+    #menu_top {
+        background: black;
+        width: 100%;
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        padding-left: 5px;
+    }
+
+    .menu li {
+        display: inline-block;
+        font-size: 25px;
+        margin: 30px 20px 30px 20px;
+    }
+
+    .search input {
+        width: 250px;
+        height: 40px;
+        padding: 15px;
+    }
+
+    .search button {
+        background: blue;
+        color: white;
+        width: 70px;
+        height: 40px;
+    }
+
+    .search {
+        padding-top: 35px;
+    }
+
+        .search form {
+            margin: 0 auto;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        font-size: 15px;
+    }
+
+    .log {
+        margin: 20px;
+    }
+
+    body {
+        font-family: Tahoma;
+        font-size: 13px;
+    }
+
+    #footer {
+        text-align: center;
+        background: gray;
+        color: wheat;
+        clear: left;
+        margin-top: 30px;
+    }
+
+        #footer p {
+            color: white;
+            padding-top: 20px;
+        }
+
+    .giayphep {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .lienhe {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
+
+    .logoBot img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    #footer .logoBot {
+        border-bottom: 1px solid white;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+
+</style>
+<body>
+    <header>
+        <div>
+            <div id="menu_top">
+                <div class="row">
+                    <div class="col-md-2 logo">
+                        <img src="https://ephoto360.com/uploads/effect-data/ephoto360.com/5e8cee199/1t5f48786c57a0f.jpg">
+                    </div>
+
+
+                    <div class="col-md-7 menu">
+                        <ul>
+                            <li><a href="#" title="Trang chủ" class="active"> Trang chủ</a></li>
+                            <li>
+                                <a href="#" title="Việt Name">
+                                    <div class="dropdown">
+                                        <span>Việt Nam</span>
+                                        <div class="dropdown-content">
+
+                                            <a href="">Đội tuyển quốc gia</a><br />
+                                            <a href="">V-League</a><br />
+                                            <a href="">Hạng nhất</a><br />
+                                            <a href="">Chuyển nhượng Việt Nam</a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Quốc tế">
+                                    <div class="dropdown">
+                                        <span>Quốc tế</span>
+                                        <div class="dropdown-content">
+                                            <a href="#">Chuyển nhượng quốc tế</a><br />
+                                            <a href="#">Premier League</a><br />
+                                            <a href="#">La Liga</a><br />
+                                            <a href="#">Serie A</a><br />
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            @*<c:if test="${a == null}">*@
+                            <li><a href="#" title="Đăng nhập"> Đăng nhập</a></li>
+                            <li><a href="#" title="Đăng kí"> Đăng kí</a></li>
+                            @* </c:if>
+                            <c:if test="${a != null}">*@
+                            <li>
+                                <a href="#" title="Đăng nhập">
+                                    <div class="dropdown">
+                                        @*<span>${a.name}</span>
+                                        <c:if test="${a.isAdmin == true}">*@
+                                        <div class="dropdown-content">
+                                            <a href="#">Quản lí tài khoản</a><br />
+                                            <a href="#">Quản lí tin tức</a><br />
+                                            <a href="#">Đổi mật khẩu</a><br />
+                                            <a href="#">Trang cá nhân</a>
+                                        </div>
+                                        @*</c:if>
+                                        <c:if test="${a.isAdmin == false}">
+                                        <div class="dropdown-content">
+                                        <a href="#">Quản lí tin tức</a><br />
+                                        <a href="#">Đổi mật khẩu</a><br />
+                                        <a href="#">Trang cá nhân</a>
+                                        </div>
+                                        </c:if>*@
+                                        @*<a class="log" href="#">Đăng xuất</a>*@
+                                    </div>
+                                </a>
+                            </li>
+                            </c:if>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 search">
+                        <form action="Search" method="post">
+                            <input name="txt" type="text" placeholder="Search in website">
+                            <button type="submit">Search</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        @*<div>
+        <div id="footer">
+        <div class="logoBot">
+        <img src="https://static.bongda24h.vn/medias/standard/2021/4/24/lich-thi-dau-bong-da-hom-nay-28-4-2021.jpg">
+        </div>
+
+        <div class="row">
+        <div class="col-md-7 giayphep">
+        <p>
+        Giấy phép: Số 15/GP-TTĐT của Bộ Thông tin - Truyền thông ngày 29/01/2010 và GP số 56/GP-STTTT của Sở
+        Thông tin và Truyền thông TP. Hồ Chí Minh cấp ngày 03/09/2021.
+        </p>
+        <p>
+        Chịu trách nhiệm nội dung: Nhà báo, TS. Võ Danh Hải.
+        Cấm sao chép dưới mọi hình thức nếu không có sự chấp thuận bằng văn bản.
+        Vận hành và phát triển bởi Công ty Cổ phần Yêu Thể Thao.
+        </p>
+        </div>
+
+        <div class="col-md-5 lienhe">
+        <h2>Thông tin liên hệ</h2>
+        <p>E-mail: phamduykhanh@gmail.com</p>
+        <p>Địa chỉ: Quảng Ninh</p>
+        <p>Phone: 0123456789</p>
+        </div>
+        </div>
+        </div>
+        </div>*@
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

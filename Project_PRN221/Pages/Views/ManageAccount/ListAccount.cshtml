@@ -1,0 +1,89 @@
+﻿@page
+@model Project_PRN221.Pages.Views.ManageAccount.ListAccountModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>JSP Page</title>
+    <style>
+        .table {
+            border: 1px solid red;
+        }
+
+            .table tr {
+                border: 1px solid red;
+                text-align: center;
+            }
+
+            .table td {
+                border: 1px solid red;
+                text-align: center;
+            }
+
+            .table th {
+                background: bisque;
+                border: 1px solid red;
+                text-align: center;
+            }
+
+        .addNews {
+            border: 1px solid blue;
+            width: 10%;
+            font-size: 25px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .paging {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Danh sách tài khoản</h1>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Mame</th>
+            <th>Gmail</th>
+            <th>IsAdmin</th>
+            <th>Grant permission</th>
+        </tr>
+        @*@foreach (var account in ViewBag.Account)
+        {*@
+            <tr>
+                <td>account.IdAcount</td>
+                <td>account.Name</td>
+                <td>account.Email</td>
+                <td>account.IsAdmin</td>
+                <td>
+                    @*@if (account.IsAdmin == false)
+                    {*@
+                        <button type="button" onclick="location.href = 'GrantPermission/ActionGrantPermission/IdAcount/True'" class="btn btn-primary">Yes</button>
+                    @*}
+                    @if (account.IsAdmin == true)
+                    {*@
+                        <button type="button" onclick="location.href = 'capQuyen?id=${a.userId}&isAd=false'" class="btn btn-secondary">No</button>
+                    @*}*@
+
+                </td>
+
+            </tr>
+        }
+
+
+
+    </table>
+
+</body>
+</html>
+

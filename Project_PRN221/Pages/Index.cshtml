@@ -1,0 +1,304 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Page news football";
+}
+
+
+
+<div class="text-center">
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+
+        <style>
+            body {
+                font-family: Tahoma;
+                font-size: 13px;
+            }
+
+            #main .left {
+                width: 70%;
+                background: yellowgreen;
+                min-height: 600px;
+            }
+
+            #main .right {
+                width: 30%;
+                background: blue;
+                min-height: 600px;
+            }
+
+            .khungNews {
+                width: 100%;
+                border: 1px solid red;
+            }
+
+            .imgpost {
+                width: 25%;
+            }
+
+            .khungNews .image img {
+                width: 100%;
+            }
+
+            .khungNews .news h3 {
+                margin-top: 25px;
+            }
+
+            #main {
+                margin-top: 15px;
+            }
+
+            #banner img {
+                width: 100%;
+                height: 500px;
+            }
+
+            .khungNewNews {
+                margin: 20px;
+            }
+
+            .imgpost:first-child {
+                width: 50%;
+            }
+
+            #footer {
+                text-align: center;
+                background: gray;
+                color: wheat;
+                clear: left;
+            }
+
+                #footer p {
+                    color: white;
+                    padding-top: 20px;
+                }
+
+            .giayphep {
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+
+            .lienhe {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+
+
+            .logoBot img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+
+            #footer .logoBot {
+                border-bottom: 1px solid white;
+                padding-bottom: 30px;
+                padding-top: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="banner">
+                <img src="https://cdn.tgdd.vn/Files/2014/08/28/562705/nhung-luu-y-ve-suc-khoe-cho-fan-bong-da-15-760x367.jpg" />
+            </div>
+            <div class="container">
+                <div id="main">
+                    <div class="row">
+                        <div class="col-md-9 left">
+
+                            <a href="#">
+                                <h2>Tin chuyển nhượng</h2>
+                            </a>
+                            @*<c:forEach items="${newCN}" var="cn">*@
+                            <a href="loadDe?id=${cn.idPost}">
+                                <div class="khungNews">
+                                    <div class="row">
+                                        <div class="col-md-4 image">
+                                            @*<c:forEach items="${newImg}" var="ni">
+                                            <c:if test="${cn.idPost == ni.postId}">*@
+                                            <img src="img/${ni.name}"
+                                                 alt="${ni.name}">
+                                            @*</c:if>
+
+                                            </c:forEach>*@
+                                        </div>
+
+                                        <div class="col-md-8 news">
+                                            <h4>${cn.title}</h4>
+                                            <h5>${cn.datePost}3</h5>
+                                            <h5>${cn.description}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                            <a href="loadBDVN">
+                                <h2>Bóng đá Việt Nam</h2>
+                            </a>
+                            @*<c:forEach items="${newBĐVN}" var="BĐVN">*@
+                            <a href="loadDe?id=${BĐVN.idPost}">
+                                <div class="khungNews">
+                                    <div class="row">
+                                        <div class="col-md-4 image">
+                                            <c:forEach items="${newImg}" var="ni">
+                                                <c:if test="${BĐVN.idPost == ni.postId}">
+                                                    <img src="img/${ni.name}"
+                                                         alt="${ni.name}">
+                                                    @* </c:if>
+
+                                                    </c:forEach>*@
+                                        </div>
+
+                                        <div class="col-md-8 news">
+                                            <h4>${BĐVN.title}</h4>
+                                            <h5>${BĐVN.datePost}3</h5>
+                                            <h5>${BĐVN.description}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                            <a href="loadAnh">
+                                <h2>Premier league</h2>
+                            </a>
+                            @*<c:forEach items="${newPL}" var="PL">*@
+                            <a href="loadDe?id=${PL.idPost}">
+                                <div class="khungNews">
+                                    <div class="row">
+                                        <div class="col-md-4 image">
+                                            @*<c:forEach items="${newImg}" var="ni">
+                                            <c:if test="${PL.idPost == ni.postId}">*@
+                                            <img src="img/${ni.name}"
+                                                 alt="${ni.name}">
+                                            @*</c:if>
+
+                                            </c:forEach>*@
+                                        </div>
+
+                                        <div class="col-md-8 news">
+                                            <h4>${PL.title}</h4>
+                                            <h5>${PL.datePost}3</h5>
+                                            <h5>${PL.description}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                            <a href="loadTBN">
+                                <h2>La Liga</h2>
+                            </a>
+                            @*<c:forEach items="${newLL}" var="LL">*@
+                            <a href="loadDe?id=${LL.idPost}">
+                                <div class="khungNews">
+                                    <div class="row">
+                                        <div class="col-md-4 image">
+                                            @*<c:forEach items="${newImg}" var="ni">
+                                            <c:if test="${LL.idPost == ni.postId}">*@
+                                            <img src="img/${ni.name}"
+                                                 alt="${ni.name}">
+                                            @* </c:if>
+
+                                            </c:forEach>*@
+                                        </div>
+
+                                        <div class="col-md-8 news">
+                                            <h4>${LL.title}</h4>
+                                            <h5>${LL.datePost}3</h5>
+                                            <h5>${LL.description}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                            <a href="loadY">
+                                <h2>Serie A</h2>
+                            </a>
+                            @*<c:forEach items="${newSA}" var="SA">*@
+                            <a href="loadDe?id=${SA.idPost}">
+                                <div class="khungNews">
+                                    <div class="row">
+                                        <div class="col-md-4 image">
+                                            @*<c:forEach items="${newImg}" var="ni">
+                                            <c:if test="${SA.idPost == ni.postId}">*@
+                                            <img src="img/${ni.name}"
+                                                 alt="${ni.name}">
+                                            @*  </c:if>
+
+                                            </c:forEach>*@
+                                        </div>
+
+                                        <div class="col-md-8 news">
+                                            <h4>${SA.title}</h4>
+                                            <h5>${SA.datePost}3</h5>
+                                            <h5>${SA.description}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                        </div>
+
+                        <div class="col-md-3 right">
+                            <h1>Tin mới nhất</h1>
+                            @*<c:forEach items="${listNew}" var="n">*@
+                            <a href="loadDe?id=${n.idPost}">
+                                <div class="khungNewNews">
+                                    @* <c:forEach items="${newImg}" var="ni">
+                                    <c:if test="${n.idPost == ni.postId}">*@
+                                    <img src="img/${ni.name}"
+                                         alt="${ni.name}" width="100%"
+                                         height="200px">
+                                    @*</c:if>*@
+                                    @*</c:forEach>*@
+                                    <h4>${n.title}</h4>
+                                </div>
+                            </a>
+                            @*</c:forEach>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="footer">
+                <div class="logoBot">
+                    <img src="https://static.bongda24h.vn/medias/standard/2021/4/24/lich-thi-dau-bong-da-hom-nay-28-4-2021.jpg">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7 giayphep">
+                        <p>
+                            Giấy phép: Số 15/GP-TTĐT của Bộ Thông tin - Truyền thông ngày 29/01/2010 và GP số 56/GP-STTTT của Sở
+                            Thông tin và Truyền thông TP. Hồ Chí Minh cấp ngày 03/09/2021.
+                        </p>
+                        <p>
+                            Chịu trách nhiệm nội dung: Nhà báo, TS. Võ Danh Hải.
+                            Cấm sao chép dưới mọi hình thức nếu không có sự chấp thuận bằng văn bản.
+                            Vận hành và phát triển bởi Công ty Cổ phần Yêu Thể Thao.
+                        </p>
+                    </div>
+
+                    <div class="col-md-5 lienhe">
+                        <h2>Thông tin liên hệ</h2>
+                        <p>E-mail: phamduykhanh@gmail.com</p>
+                        <p>Địa chỉ: Quảng Ninh</p>
+                        <p>Phone: 0123456789</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+</div>

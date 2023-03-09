@@ -1,0 +1,106 @@
+﻿@page
+@model Project_PRN221.Pages.Views.ManageNews.ListNewsModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>JSP Page</title>
+    <style>
+        .table {
+            border: 1px solid red;
+        }
+
+            .table tr {
+                border: 1px solid red;
+                text-align: center;
+            }
+
+            .table td {
+                border: 1px solid red;
+                text-align: center;
+            }
+
+            .table th {
+                background: bisque;
+                border: 1px solid red;
+                text-align: center;
+            }
+
+        .addNews {
+            border: 1px solid blue;
+            width: 10%;
+            font-size: 25px;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .paging {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .paging a {
+                color: black;
+                font-size: 25px;
+                margin: 5px;
+            }
+
+            .paging .active {
+                background: white;
+            }
+
+            .paging .index-page {
+            }
+
+            .paging .paging-pre {
+                background: aqua;
+            }
+
+            .paging .paging-next {
+                background: aqua;
+            }
+
+        .delete {
+            background: coral;
+        }
+
+        .update {
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="addNews"><a href="AddNews.cshtml">Add News</a></div>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>datePost</th>
+            <th>description</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
+        </tr>
+        @*@foreach (var post in ViewBag.Posts)
+        {*@
+            <tr>
+                <td>IdPost</td>
+                <td>Title</td>
+                <td>DatePost</td>
+                <td>Description</td>
+                <td><a class="delete" href="/DeleteNews/ActionDeleteNews/?id=IdPost">Delete</a></td>
+                <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Update</a></td>
+            </tr>
+        @*}*@
+    </table>
+    <div class="paging">
+       
+    </div>
+</body>
+</html>
+

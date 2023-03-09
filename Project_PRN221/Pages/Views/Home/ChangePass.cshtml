@@ -1,0 +1,48 @@
+﻿@page
+@model Project_PRN221.Pages.Views.Home.ChangePassModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>JSP Page</title>
+    <style>
+        .changePass {
+            text-align: center;
+        }
+
+        .comment {
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="changePass">Change Password</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <form method="post" id="passwordForm" action="ConfirmChangePass">
+                    <div class="comment">Vui lòng nhập mật khẩu cũ</div>
+                    <input type="password" class="input-lg form-control" name="oldPass" id="password1" placeholder="Old Password" autocomplete="off">
+                    <div class="comment">Vui lòng nhập mật khẩu</div>
+                    <input type="password" class="input-lg form-control" name="newPass" id="password1" placeholder="New Password" autocomplete="off">
+                    <div class="comment">Vui lòng nhập lại mật khẩu</div>
+                    <input type="password" class="input-lg form-control" name="newPassRepeat" id="password2" placeholder="Repeat Password" autocomplete="off">
+
+                    <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg">
+                </form>
+            </div><!--/col-sm-6-->
+        </div><!--/row-->
+    </div>
+</body>
+</html>

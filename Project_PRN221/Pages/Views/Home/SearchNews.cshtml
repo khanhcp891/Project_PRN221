@@ -1,0 +1,165 @@
+﻿@page
+@model Project_PRN221.Pages.Views.Home.SearchNewsModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>JSP Page</title>
+    <style>
+        body {
+            font-family: Tahoma;
+            font-size: 13px;
+        }
+
+        #menu_top {
+            background: black;
+            width: 100%;
+            height: 100px;
+            padding-bottom: 10px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding-left: 5px;
+        }
+
+        .menu li {
+            display: inline-block;
+            font-size: 25px;
+            margin: 30px 30px 30px 30px;
+        }
+
+        .search input {
+            width: 250px;
+            height: 40px;
+            padding: 10px;
+        }
+
+        .search button {
+            background: blue;
+            color: white;
+            width: 70px;
+            height: 40px;
+        }
+
+        .search {
+            padding-top: 35px;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 500px;
+        }
+
+
+        #main .left {
+            width: 70%;
+            background: yellow;
+            min-height: 600px;
+        }
+
+        #main .right {
+            width: 30%;
+            background: blue;
+            min-height: 600px;
+        }
+
+        .khungNews {
+            width: 100%;
+            border: 1px solid red;
+        }
+
+            .khungNews .image img {
+                width: 100%;
+            }
+
+            .khungNews .news h3 {
+                margin-top: 25px;
+            }
+
+        .paging {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+            .paging a {
+                color: black;
+                font-size: 25px;
+                margin: 5px;
+            }
+
+            .paging .active {
+                background: white;
+            }
+
+            .paging .index-page {
+            }
+
+            .paging .paging-pre {
+                background: aqua;
+            }
+
+            .paging .paging-next {
+                background: aqua;
+            }
+    </style>
+
+
+</head>
+<body>
+
+
+    <div class="container">
+
+        <div id="main">
+            <div class="row">
+                <div class="col-md-9 left">
+                    @*@foreach (var search in ViewBag.post)
+                    {*@
+                        @*<a href="#">*@
+                        <div class="khungNews">
+                            <div class="row">
+                                <div class="col-md-4 image">
+                                    @*@foreach (var image in ViewBag.Image)
+                                    {
+                                        @if (image.PostId == search.IdPost)
+                                        {*@
+                                            <img src="~/img/Name">
+                                        @*}
+                                    }*@
+                                </div>
+
+                                <div class="col-md-8 news">
+                                    <h4>Title</h4>
+                                    <h5>DatePost</h5>
+                                    <h5>Description</h5>
+                                </div>
+                            </div>
+                        </div>
+                        @*</a>*@
+                    }
+
+
+
+
+
+                </div>
+                <div class="col-md-3 right">
+                    <h1>Tin mới nhất</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
