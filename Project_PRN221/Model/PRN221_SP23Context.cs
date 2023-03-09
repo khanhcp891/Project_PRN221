@@ -27,7 +27,7 @@ namespace Project_PRN221.Model
             if (!optionsBuilder.IsConfigured)
             {
                 var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-                optionsBuilder.UseSqlServer(config.GetConnectionString("PRN221_SP23"));
+                optionsBuilder.UseSqlServer(config.GetConnectionString("appsettings"));
             }
         }
 

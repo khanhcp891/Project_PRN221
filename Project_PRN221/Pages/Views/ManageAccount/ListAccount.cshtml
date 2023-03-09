@@ -58,21 +58,21 @@
             <th>IsAdmin</th>
             <th>Grant permission</th>
         </tr>
-        @*@foreach (var account in ViewBag.Account)
-        {*@
+        @foreach (var account in Model.ListAccount)
+        {
             <tr>
-                <td>account.IdAcount</td>
-                <td>account.Name</td>
-                <td>account.Email</td>
-                <td>account.IsAdmin</td>
+                <td>@account.IdAccount</td>
+                <td>@account.Name</td>
+                <td>@account.Email</td>
+                <td>@account.IsAdmin</td>
                 <td>
                     @*@if (account.IsAdmin == false)
                     {*@
-                        <button type="button" onclick="location.href = 'GrantPermission/ActionGrantPermission/IdAcount/True'" class="btn btn-primary">Yes</button>
+                        @*<button type="button" onclick="location.href = 'GrantPermission/ActionGrantPermission/IdAcount/True'" class="btn btn-primary">Yes</button>*@
                     @*}
                     @if (account.IsAdmin == true)
                     {*@
-                        <button type="button" onclick="location.href = 'capQuyen?id=${a.userId}&isAd=false'" class="btn btn-secondary">No</button>
+                        @*<button type="button" onclick="location.href = 'capQuyen?id=${a.userId}&isAd=false'" class="btn btn-secondary">No</button>*@
                     @*}*@
 
                 </td>
