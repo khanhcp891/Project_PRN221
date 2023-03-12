@@ -80,23 +80,23 @@
     <table class="table">
         <tr>
             <th>id</th>
-            <th>title</th>
+            <th>Email</th>
             <th>datePost</th>
             <th>description</th>
             <th>Action 1</th>
             <th>Action 2</th>
         </tr>
-        @*@foreach (var post in ViewBag.Posts)
-        {*@
+        @foreach (var post in Model.ListAccount)
+        {
             <tr>
                 <td>IdPost</td>
-                <td>Title</td>
+                <td>@post.Email</td>
                 <td>DatePost</td>
                 <td>Description</td>
                 <td><a class="delete" href="/DeleteNews/ActionDeleteNews/?id=IdPost">Delete</a></td>
                 <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Update</a></td>
             </tr>
-        @*}*@
+        }
     </table>
     <div class="paging">
        
