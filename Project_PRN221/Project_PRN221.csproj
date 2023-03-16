@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.16.5" />
+    <PackageReference Include="LazZiya.TagHelpers" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

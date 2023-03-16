@@ -11,20 +11,23 @@ namespace Project_PRN221.Pages.Views.ManageAccount
 
 
         public List<Account> ListAccount { get; set; } = default!;
+
+        public int totalAccount { get; set; }
+
+        public int pageNo { get; set; }
+
+        public int pageSize { get; set; }
         public ListAccountModel( PRN221_SP23Context dbContext)
         {
             //_logger = logger;
             _dbContext = dbContext;
         }
-        public void OnGet()
+        public void OnGet(int p = 1, int s = 2)
         {
-            ListAccount = _dbContext.Accounts.ToList();
-            //if(ListAccount== null)
-            //{
-            //} else
-            //{
-
-            //}
+            ListAccount = _dbContext.Accounts.Skip((p - 1 ) * s).Take(s).ToList();
+            pageSize = s;
+            totalAccount = _dbContext.Accounts.Count();
+            pageNo= p;
         }
     }
 }

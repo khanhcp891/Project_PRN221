@@ -1,8 +1,20 @@
-﻿@page
+﻿@page "/CNVN"
 @model Project_PRN221.Pages.Views.VN.CNVNModel
 @{
     //Layout = "~/Page/Shared/Layout.cshtml";
 }
+
+@{
+    var pagingmodel = new XTL.Helpers.PagingModel()
+
+            {
+                currentpage = Model.currentPage,
+                countpages = Model.countPages,
+                generateUrl = (int? p) => Url.Page("/Views/VN/CNVN", new { p = p })
+            };
+}
+
+
 
 <!DOCTYPE html>
 <html>
@@ -123,41 +135,44 @@
         <div id="main">
             <div class="row">
                 <div class="col-md-9 left">
-                    
-                    <a href="#">
+                    @foreach (var CNVNNews in Model.listPostShow)
+                    {
+                        <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
+                            <div class="khungNews">
+                                <div class="row">
+                                    <div class="col-md-4 image">
+                                        @foreach (var image in Model.listImage)
+                                        {
+                                            @if (image.PostId == CNVNNews.IdPost)
+                                            {
+                                                <img src="~/img/@image.Name">
+                                            }
+                                        }
 
-                        <div class="khungNews">
-                            <div class="row">
-                                <div class="col-md-4 image">
-                                    
-                                    @*<img src="~/img/@image.Name">*@
-                                    <img src="">
-                                </div>
+                                    </div>
 
-                                <div class="col-md-8 news">
-                                    <h4>Title</h4>
-                                    <h5>DatePost</h5>
-                                    <h5>Description</h5>
+                                    <div class="col-md-8 news">
+                                        <h4>@CNVNNews.Title</h4>
+                                        <h5>@CNVNNews.DatePost</h5>
+                                        <h5>@CNVNNews.Description</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                     }
 
-                    <div class="paging">
-                    </div>
+                    <partial name="PagingXTL" model="@pagingmodel" />
 
 
 
                 </div>
                 <div class="col-md-3 right">
                     <h1>Tin mới nhất</h1>
-                    <a href="#">
 
+                    <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
                         <div class="khungNewNews">
 
-
-                            <img src="#"
+                            <img src="~/img/Name"
                                  alt="" width="100%"
                                  height="200px">
 
@@ -173,3 +188,5 @@
 
 </body>
 </html>
+
+

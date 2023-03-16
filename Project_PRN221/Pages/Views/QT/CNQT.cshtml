@@ -1,7 +1,18 @@
-﻿@page
+﻿@page "/CNQT"
 @model Project_PRN221.Pages.Views.QT.CNQTModel
 @{
 }
+@{
+    var pagingmodel = new XTL.Helpers.PagingModel()
+
+            {
+                currentpage = Model.currentPage,
+                countpages = Model.countPages,
+                generateUrl = (int? p) => Url.Page("/Views/QT/CNQT", new { p = p })
+            };
+}
+
+
 
 <!DOCTYPE html>
 <html>
@@ -122,46 +133,50 @@
         <div id="main">
             <div class="row">
                 <div class="col-md-9 left">
-                    
+                    @foreach (var CNQTNews in Model.listPostShow)
+                    {
                         <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
                             <div class="khungNews">
                                 <div class="row">
                                     <div class="col-md-4 image">
-                                        
-                                                <img src="~/img/Name">
-                                            
+                                        @foreach (var image in Model.listImage)
+                                        {
+                                            @if (image.PostId == CNQTNews.IdPost)
+                                            {
+                                                <img src="~/img/@image.Name">
+                                            }
+                                        }
+
                                     </div>
 
                                     <div class="col-md-8 news">
-                                        <h4>Title</h4>
-                                        <h5>DatePost</h5>
-                                        <h5>Description</h5>
+                                        <h4>@CNQTNews.Title</h4>
+                                        <h5>@CNQTNews.DatePost</h5>
+                                        <h5>@CNQTNews.Description</h5>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     }
 
-                    <div class="paging">
-                        
-                    </div>
+                    <partial name="PagingXTL" model="@pagingmodel" />
 
 
 
                 </div>
                 <div class="col-md-3 right">
                     <h1>Tin mới nhất</h1>
-                    
-                        <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
-                            <div class="khungNewNews">
-                               
-                                        <img src="~/img/Name"
+
+                    <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
+                        <div class="khungNewNews">
+
+                            <img src="~/img/Name"
                                  alt="" width="100%"
                                  height="200px">
-                                    
-                                <h4>Title</h4>
-                            </div>
-                        </a>
+
+                            <h4>Title</h4>
+                        </div>
+                    </a>
                     }
                 </div>
             </div>

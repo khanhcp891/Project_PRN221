@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/AddAccount"
 @model Project_PRN221.Pages.Views.ManageAccount.AddAccountModel
 @{
 }
@@ -7,7 +7,7 @@
 <html>
 <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        /*font-family: Arial, Helvetica, sans-serif;*/
     }
 
     * {
@@ -126,19 +126,19 @@
 
     <div id="id01" class="modal">
         <span class="close" title="Close Modal">&times;</span>
-        <form class="modal-content" action="ConfirmRegister" method="post">
+        <form class="modal-content" method="post">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <hr>
                 <label for="email"><b>Emai</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" placeholder="Enter Email" asp-for="AddAccountRequest.Email" required>
 
                 <label for="user"><b>User</b></label>
-                <input type="text" placeholder="Enter User" name="user" required>
+                <input type="text" placeholder="Enter User" asp-for="AddAccountRequest.Name" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="pass" required>
+                <input type="password" placeholder="Enter Password" asp-for="AddAccountRequest.Password" required>
 
                 <label for="psw-repeat"><b>Repeat Password</b></label>
                 <input type="password" placeholder="Repeat Password" name="passRepeat" required>

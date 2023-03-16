@@ -1,6 +1,7 @@
-﻿@page
+﻿@page "/AccountList"
 @model Project_PRN221.Pages.Views.ManageAccount.ListAccountModel
 @{
+    
 }
 
 <!DOCTYPE html>
@@ -12,6 +13,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>JSP Page</title>
     <style>
+
+        /*body {
+            background-color: #180;
+
+        }*/
+        .pagination .dropdown {
+            hidden;
+        }
+
         .table {
             border: 1px solid red;
         }
@@ -79,10 +89,9 @@
 
             </tr>
         }
-
-
-
     </table>
+    <paging class="pagination" total-records="@Model.totalAccount" show-total-pages="false" show-total-records="false" 
+    page-size="@Model.pageSize"page-no="@Model.pageNo"></paging>
 
 </body>
 </html>
