@@ -31,7 +31,7 @@ namespace Project_PRN221.Pages.Views.ManageAccount
             return Page();
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostUpdate()
         {
             var a = await dbContext.Accounts.FirstOrDefaultAsync(x => x.IdAccount == account.IdAccount);
             if (a != null)
@@ -45,6 +45,23 @@ namespace Project_PRN221.Pages.Views.ManageAccount
 
             dbContext.SaveChangesAsync();
             return RedirectToPage("/Views/ManageAccount/ListAccount");
+        }
+
+        public async Task<IActionResult> OnPostDelete()
+        {
+            var a = await dbContext.Accounts.FirstOrDefaultAsync(x => x.IdAccount == account.IdAccount);
+            if (a != null)
+            {
+                dbContext.Accounts.Remove(a);
+                dbContext.SaveChangesAsync();
+                return RedirectToPage("/Views/ManageAccount/ListAccount");
+            }
+            else
+            {
+                return Content("Không th?y");
+            }
+            return Page();
+            
         }
     }
 }
