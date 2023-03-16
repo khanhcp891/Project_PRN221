@@ -38,16 +38,16 @@ namespace Project_PRN221.Pages.Views.ManageAccount
                     };
                     dbContext.Accounts.Add(account);
                     await dbContext.SaveChangesAsync();
-                    return RedirectToPage("/Views/ManageAccount/ListAccount"); 
+                    return RedirectToPage("/Index"); 
                     
                 } else
                 {
-                    return RedirectToPage("/Views/ManageAccount/ListAccount");
+                    return RedirectToPage("/Views/ManageAccount/AddAccount");
                 }
                 
             } else
             {
-                return RedirectToPage("/Views/ManageAccount/ListAccount");
+                return RedirectToPage("/Views/ManageAccount/AddAccount");
             }
             
         }
