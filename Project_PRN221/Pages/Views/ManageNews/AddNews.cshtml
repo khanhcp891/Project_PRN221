@@ -17,29 +17,31 @@
     <jsp:useBean id="d" scope="page" class="dao.DAO" />
     <div class="container">
         <h2>Add News</h2>
-        <form class="form-horizontal" action="Add" method="post">
+        <form class="form-horizontal" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2">Title:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Enter title" name="title">
+                    <input type="text" class="form-control" placeholder="Enter title" asp-for="AddPostRequest.Title">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Date Post:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Enter date post" name="datePost">
+                    <input type="date" class="form-control" placeholder="Enter date post" asp-for="AddPostRequest.DatePost">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Description:</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" placeholder="Enter description" name="description" style="width: 100%; height: 100px"></textarea>
+                    <textarea class="form-control" placeholder="Enter description" style="width: 100%; height: 100px" 
+                    asp-for="AddPostRequest.Description"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Concept:</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" placeholder="Enter concept" name="concept" style="width: 100%; height: 200px"></textarea>
+                    <textarea class="form-control" placeholder="Enter concept" style="width: 100%; height: 200px" 
+                    asp-for="AddPostRequest.Concept"></textarea>
                 </div>
             </div>
 

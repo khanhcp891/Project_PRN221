@@ -1,6 +1,16 @@
-﻿@page
+﻿@page "/newsList"
 @model Project_PRN221.Pages.Views.ManageNews.ListNewsModel
 @{
+}
+
+@{
+    var pagingmodel = new XTL.Helpers.PagingModel()
+
+            {
+                currentpage = Model.currentPage,
+                countpages = Model.countPages,
+                generateUrl = (int? p) => Url.Page("/Views/ManageNews/ListNews", new { p = p })
+            };
 }
 
 <!DOCTYPE html>
@@ -80,27 +90,23 @@
     <table class="table">
         <tr>
             <th>id</th>
-            <th>Email</th>
+            <th>Title</th>
             <th>datePost</th>
-            <th>description</th>
             <th>Action 1</th>
             <th>Action 2</th>
         </tr>
-        @foreach (var post in Model.ListAccount)
+        @foreach (var post in Model.listPostShow)
         {
             <tr>
-                <td>IdPost</td>
-                <td>@post.Email</td>
-                <td>DatePost</td>
-                <td>Description</td>
-                <td><a class="delete" href="/DeleteNews/ActionDeleteNews/?id=IdPost">Delete</a></td>
+                <td>@post.IdPost</td>
+                <td>@post.Title</td>
+                <td>@post.DatePost</td>
                 <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Update</a></td>
+                <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Detail</a></td>
             </tr>
         }
     </table>
-    <div class="paging">
-       
-    </div>
+    <partial name="PagingXTL" model="@pagingmodel" />
 </body>
 </html>
 
