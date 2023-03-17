@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/UpdateNews/{id:int}"
 @model Project_PRN221.Pages.Views.ManageNews.UpdateNewsModel
 @{
 }
@@ -14,38 +14,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <jsp:useBean id="d" scope="page" class="dao.DAO" />
+    
     <div class="container">
         <h2>Update</h2>
-        <form class="form-horizontal" action="Update" method="post">
+        <form class="form-horizontal" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2">ID:</label>
                 <div class="col-sm-10">
-                    <input readonly="" value="News.IdPost" type="text" class="form-control" name="id">
+                    <input readonly="" type="text" class="form-control" asp-for="post.IdPost">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Title:</label>
                 <div class="col-sm-10">
-                    <input type="text" value="News.Title" class="form-control" placeholder="Enter title" name="title">
+                    <input type="text" class="form-control" placeholder="Enter title" asp-for="post.Title">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Date Post:</label>
                 <div class="col-sm-10">
-                    <input type="text" value="News.DatePost" class="form-control" placeholder="Enter date post" name="datePost">
+                    <input type="text" class="form-control" placeholder="Enter date post" asp-for="post.DatePost">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Concept:</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" placeholder="Enter concept" name="concept" style="width: 100%; height: 200px">News.Concept</textarea>
+                    <textarea class="form-control" placeholder="Enter concept" style="width: 100%; height: 200px"
+                              asp-for="post.Concept">Concept</textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Description:</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" placeholder="Enter description" name="description" style="width: 100%; height: 100px">News.Description</textarea>
+                    <textarea class="form-control" placeholder="Enter description" style="width: 100%; height: 100px"
+                              asp-for="post.Description">Description</textarea>
                 </div>
             </div>
 
@@ -53,29 +55,42 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Authur:</label>
                 <div class="col-sm-10">
-                    <select name="idAuthur">
-                        @*@foreach (var authur in ViewBag.Authurs)
-                        {*@
-                            <option value="IdAuthur">AuthurName</option>
-                        @*}*@
+                    <select asp-for="post.IdAuthur">
+                        @foreach (var authur in Model.listAuthur)
+                        {
+                            @if(Model.post.IdAuthur == authur.IdAuthur)
+                            {
+                                <option selected value="@authur.IdAuthur">@authur.AuthurName</option>      
+                            }
+                            <option value="@authur.IdAuthur">@authur.AuthurName</option>
+                        }
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Category:</label>
                 <div class="col-sm-10">
-                    <select name="idConcept">
-                        @*@foreach (var category in ViewBag.CategoryNews)
-                        {*@
-                            <option value="Id">Name</option>
-                        @*}*@
+                    <select asp-for="post.IdCategory">
+                        @foreach (var category in Model.listCate)
+                        {
+                            @if (Model.post.IdCategory == category.Id)
+                            {
+                                <option selected value="@category.Id">@category.Name</option>
+                            }
+                            <option value="@category.Id">@category.Name</option>
+                        }
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default" asp-page-handler="Update">Update</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" asp-page-handler="Delete">Delete</button>
                 </div>
             </div>
         </form>
