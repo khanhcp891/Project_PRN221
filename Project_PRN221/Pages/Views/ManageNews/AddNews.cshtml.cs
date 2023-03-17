@@ -34,10 +34,10 @@ namespace Project_PRN221.Pages.Views.ManageNews
                 DatePost = AddPostRequest.DatePost,
                 Concept = AddPostRequest.Concept,
                 Description = AddPostRequest.Description,
-                Images = null,
-
+                IdAuthur = AddPostRequest.IdAuthur,
+                IdCategory = AddPostRequest.IdCategory
             };
-            dbContext.Accounts.Add(account);
+            dbContext.Posts.Add(post);
             await dbContext.SaveChangesAsync();
             return RedirectToPage("/Index");
 
@@ -45,4 +45,4 @@ namespace Project_PRN221.Pages.Views.ManageNews
 
     }
 }
-}
+

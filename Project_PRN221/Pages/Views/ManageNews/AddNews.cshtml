@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/AddNews"
 @model Project_PRN221.Pages.Views.ManageNews.AddNewsModel
 @{
 }
@@ -55,20 +55,22 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Authur:</label>
                 <div class="col-sm-10">
-                    <select name="idAuthur">
-                        
-                            <option value="IdAuthur">AuthurName</option>
-                        
+                    <select asp-for="AddPostRequest.IdAuthur">
+                         @foreach (var authur in Model.listAuthur)
+                           {
+                            <option value="@authur.IdAuthur">@authur.AuthurName</option>
+                           }
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Category:</label>
                 <div class="col-sm-10">
-                    <select name="idConcept">
-                        
-                            <option value="Id">Name</option>
-                        
+                    <select  asp-for="AddPostRequest.IdCategory">
+                         @foreach (var category in Model.listCate)
+                           {
+                            <option value="@category.Id">@category.Name</option>
+                           }
                     </select>
                 </div>
             </div>
