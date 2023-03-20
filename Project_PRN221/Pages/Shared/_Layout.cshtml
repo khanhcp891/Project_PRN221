@@ -136,17 +136,17 @@
 
                     <div class="col-md-7 menu">
                         <ul>
-                            <li><a href="#" title="Trang chủ" class="active"> Trang chủ</a></li>
+                            <li><a asp-page="/Index" title="Trang chủ" class="active"> Trang chủ</a></li>
                             <li>
                                 <a href="#" title="Việt Name">
                                     <div class="dropdown">
                                         <span>Việt Nam</span>
                                         <div class="dropdown-content">
 
-                                            <a href="">Đội tuyển quốc gia</a><br />
-                                            <a href="">V-League</a><br />
-                                            <a href="">Hạng nhất</a><br />
-                                            <a href="">Chuyển nhượng Việt Nam</a>
+                                            <a asp-page="/Views/VN/DTQG">Đội tuyển quốc gia</a><br />
+                                            <a asp-page="/Views/VN/V-League">V-League</a><br />
+                                            <a asp-page="/Views/VN/HangNhat">Hạng nhất</a><br />
+                                            <a asp-page="/Views/VN/CNVN">Chuyển nhượng Việt Nam</a>
                                         </div>
                                     </div>
                                 </a>
@@ -156,10 +156,10 @@
                                     <div class="dropdown">
                                         <span>Quốc tế</span>
                                         <div class="dropdown-content">
-                                            <a href="#">Chuyển nhượng quốc tế</a><br />
-                                            <a href="#">Premier League</a><br />
-                                            <a href="#">La Liga</a><br />
-                                            <a href="#">Serie A</a><br />
+                                            <a asp-page="/Views/QT/CNQT">Chuyển nhượng quốc tế</a><br />
+                                            <a asp-page="/Views/QT/LaLiga">Premier League</a><br />
+                                            <a asp-page="/Views/QT/PremierLeague">La Liga</a><br />
+                                            <a asp-page="/Views/QT/SerieA">Serie A</a><br />
                                         </div>
                                     </div>
                                 </a>
@@ -172,18 +172,18 @@
                             <li>
                                 <a href="#" title="Đăng nhập">
                                     <div class="dropdown">
-                                        @*<span>${a.name}</span>
-                                        <c:if test="${a.isAdmin == true}">*@
+                                        <span>Name</span>
+                                        @*<c:if test="${a.isAdmin == true}">*@
                                         <div class="dropdown-content">
-                                            <a href="#">Quản lí tài khoản</a><br />
-                                            <a href="#">Quản lí tin tức</a><br />
+                                            <a asp-page="/Views/ManageAccount/ListAccount">Quản lí tài khoản</a><br />
+                                            <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
                                             <a href="#">Đổi mật khẩu</a><br />
                                             <a href="#">Trang cá nhân</a>
                                         </div>
                                         @*</c:if>
                                         <c:if test="${a.isAdmin == false}">
                                         <div class="dropdown-content">
-                                        <a href="#">Quản lí tin tức</a><br />
+                                        <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
                                         <a href="#">Đổi mật khẩu</a><br />
                                         <a href="#">Trang cá nhân</a>
                                         </div>

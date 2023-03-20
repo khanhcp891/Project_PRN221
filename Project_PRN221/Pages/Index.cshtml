@@ -120,132 +120,147 @@
                             <a href="#">
                                 <h2>Tin chuyển nhượng</h2>
                             </a>
-                            @*<c:forEach items="${newCN}" var="cn">*@
-                            <a href="loadDe?id=${cn.idPost}">
-                                <div class="khungNews">
-                                    <div class="row">
-                                        <div class="col-md-4 image">
-                                            @*<c:forEach items="${newImg}" var="ni">
+                            @foreach (var CNNews in Model.listPostCN)
+                            {
+                                <a href="loadDe?id=${cn.idPost}">
+                                    <div class="khungNews">
+                                        <div class="row">
+                                            <div class="col-md-4 image">
+                                                @*<c:forEach items="${newImg}" var="ni">
                                             <c:if test="${cn.idPost == ni.postId}">*@
-                                            <img src="img/${ni.name}"
+                                                <img src="img/${ni.name}"
                                                  alt="${ni.name}">
-                                            @*</c:if>
+                                                @*</c:if>
 
                                             </c:forEach>*@
-                                        </div>
+                                            </div>
 
-                                        <div class="col-md-8 news">
-                                            <h4>${cn.title}</h4>
-                                            <h5>${cn.datePost}3</h5>
-                                            <h5>${cn.description}</h5>
+                                            <div class="col-md-8 news">
+                                                <h4>@CNNews.Title</h4>
+                                                <p>@CNNews.DatePost</p>
+                                                <p>@CNNews.Description</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                             @*</c:forEach>*@
                             <a href="loadBDVN">
                                 <h2>Bóng đá Việt Nam</h2>
                             </a>
-                            @*<c:forEach items="${newBĐVN}" var="BĐVN">*@
-                            <a href="loadDe?id=${BĐVN.idPost}">
-                                <div class="khungNews">
-                                    <div class="row">
-                                        <div class="col-md-4 image">
-                                            <c:forEach items="${newImg}" var="ni">
-                                                <c:if test="${BĐVN.idPost == ni.postId}">
-                                                    <img src="img/${ni.name}"
+                            @foreach (var bdvn in Model.listPostBDVN)
+                            {
+                                <a href="loadDe?id=${BĐVN.idPost}">
+                                    <div class="khungNews">
+                                        <div class="row">
+                                            <div class="col-md-4 image">
+                                                <c:forEach items="${newImg}" var="ni">
+                                                    <c:if test="${BĐVN.idPost == ni.postId}">
+                                                        <img src="img/${ni.name}"
                                                          alt="${ni.name}">
-                                                    @* </c:if>
+                                                        @* </c:if>
 
                                                     </c:forEach>*@
-                                        </div>
+                                            </div>
 
-                                        <div class="col-md-8 news">
-                                            <h4>${BĐVN.title}</h4>
-                                            <h5>${BĐVN.datePost}3</h5>
-                                            <h5>${BĐVN.description}</h5>
+                                            <div class="col-md-8 news">
+                                                <h4>@bdvn.Title</h4>
+                                                <p>@bdvn.DatePost</p>
+                                                <p>@bdvn.Description</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                             @*</c:forEach>*@
                             <a href="loadAnh">
                                 <h2>Premier league</h2>
                             </a>
-                            @*<c:forEach items="${newPL}" var="PL">*@
-                            <a href="loadDe?id=${PL.idPost}">
-                                <div class="khungNews">
-                                    <div class="row">
-                                        <div class="col-md-4 image">
-                                            @*<c:forEach items="${newImg}" var="ni">
+                            @foreach (var anh in Model.listPostPremierLeague)
+                            {
+                                <a href="loadDe?id=${PL.idPost}">
+                                    <div class="khungNews">
+                                        <div class="row">
+                                            <div class="col-md-4 image">
+                                                @*<c:forEach items="${newImg}" var="ni">
                                             <c:if test="${PL.idPost == ni.postId}">*@
-                                            <img src="img/${ni.name}"
+                                                <img src="img/${ni.name}"
                                                  alt="${ni.name}">
-                                            @*</c:if>
+                                                @*</c:if>
 
                                             </c:forEach>*@
-                                        </div>
+                                            </div>
 
-                                        <div class="col-md-8 news">
-                                            <h4>${PL.title}</h4>
-                                            <h5>${PL.datePost}3</h5>
-                                            <h5>${PL.description}</h5>
+                                            <div class="col-md-8 news">
+                                                <h4>@anh.Title</h4>
+                                                <p>@anh.DatePost</p>
+                                                <p>@anh.Description</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                             @*</c:forEach>*@
                             <a href="loadTBN">
                                 <h2>La Liga</h2>
                             </a>
-                            @*<c:forEach items="${newLL}" var="LL">*@
-                            <a href="loadDe?id=${LL.idPost}">
-                                <div class="khungNews">
-                                    <div class="row">
-                                        <div class="col-md-4 image">
-                                            @*<c:forEach items="${newImg}" var="ni">
+                            @foreach (var tbn in Model.listPostLaLiga)
+                            {
+                                <a href="loadDe?id=${LL.idPost}">
+                                    <div class="khungNews">
+                                        <div class="row">
+                                            <div class="col-md-4 image">
+                                                @*<c:forEach items="${newImg}" var="ni">
                                             <c:if test="${LL.idPost == ni.postId}">*@
-                                            <img src="img/${ni.name}"
+                                                <img src="img/${ni.name}"
                                                  alt="${ni.name}">
-                                            @* </c:if>
+                                                @* </c:if>
 
                                             </c:forEach>*@
-                                        </div>
+                                            </div>
 
-                                        <div class="col-md-8 news">
-                                            <h4>${LL.title}</h4>
-                                            <h5>${LL.datePost}3</h5>
-                                            <h5>${LL.description}</h5>
+                                            <div class="col-md-8 news">
+                                                <h4>@tbn.Title</h4>
+                                                <p>@tbn.DatePost</p>
+                                                <p>@tbn.Description</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                             @*</c:forEach>*@
                             <a href="loadY">
                                 <h2>Serie A</h2>
                             </a>
-                            @*<c:forEach items="${newSA}" var="SA">*@
-                            <a href="loadDe?id=${SA.idPost}">
-                                <div class="khungNews">
-                                    <div class="row">
-                                        <div class="col-md-4 image">
-                                            @*<c:forEach items="${newImg}" var="ni">
+                            @foreach (var serieA in Model.listPostSeriA)
+                            {
+                                <a href="loadDe?id=${SA.idPost}">
+                                    <div class="khungNews">
+                                        <div class="row">
+                                            <div class="col-md-4 image">
+                                                @*<c:forEach items="${newImg}" var="ni">
                                             <c:if test="${SA.idPost == ni.postId}">*@
-                                            <img src="img/${ni.name}"
+                                                <img src="img/${ni.name}"
                                                  alt="${ni.name}">
-                                            @*  </c:if>
+                                                @*  </c:if>
 
                                             </c:forEach>*@
-                                        </div>
+                                            </div>
 
-                                        <div class="col-md-8 news">
-                                            <h4>${SA.title}</h4>
-                                            <h5>${SA.datePost}3</h5>
-                                            <h5>${SA.description}</h5>
+                                            <div class="col-md-8 news">
+                                                <h4>@serieA.Title</h4>
+                                                <p>@serieA.DatePost</p>
+                                                <p>@serieA.Description</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            }
+
                             @*</c:forEach>*@
                         </div>
 

@@ -73,8 +73,8 @@
                 <td>@post.IdPost</td>
                 <td>@post.Title</td>
                 <td>@post.DatePost</td>
-                <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Update</a></td>
-                <td><a class="update" href="/UpdateNews/ActionUpdateNews/?id=IdPost">Detail</a></td>
+                <td><a class="update" asp-page="./UpdateNews" asp-route-id="@post.IdPost">Update</a></td>
+                <td><a class="detail" asp-page="/Views/Home/DetailNews" asp-route-id="@post.IdPost">Detail</a></td>
             </tr>
         }
     </table>

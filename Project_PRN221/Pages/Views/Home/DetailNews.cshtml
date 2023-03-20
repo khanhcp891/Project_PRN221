@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/DetailNews/{id:int}"
 @model Project_PRN221.Pages.Views.Home.DetailNewsModel
 @{
 }
@@ -122,24 +122,24 @@
     <div class="container">
 
         <div id="main">
-            <h1>@ViewData["title"]</h1>
-            <h4 class="date">@ViewData["date"]</h4>
-            @*@foreach (var image in ViewBag.Image)
+            <h1>@Model.post.Title</h1>
+            <h4 class="date">@Model.post.DatePost</h4>
+            @foreach (var image in Model.listImage)
             {
-                @if (image.PostId == (int)ViewData["idpost"])
-                {*@
-                    <img src="~/img/Name">
-                @*}
-            }*@
-            <p>@ViewData["concept"]</p>
+                @if (image.PostId == Model.post.IdPost)
+                {
+                    <img src="/img/@image.Name">
+                }
+            }
+            <p>@Model.post.Concept</p>
 
-            @*@foreach (var authur in ViewBag.Authurs)
+            @foreach (var authur in Model.listAuthur)
             {
-                @if (authur.IdAuthur == (int)ViewData["idAuthur"])
-                {*@
-                    <h5 class="authurName">AuthurName</h5>
-                @*}
-            }*@
+                @if (authur.IdAuthur == Model.post.IdAuthur)
+                {
+                    <h5 class="authurName">@authur.AuthurName</h5>
+                }
+            }
         </div>
     </div>
 
