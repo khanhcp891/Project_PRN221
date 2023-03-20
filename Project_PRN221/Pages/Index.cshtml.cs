@@ -19,6 +19,8 @@ namespace Project_PRN221.Pages
 
         public List<Post> listPostSeriA { get; set; } = default!;
 
+        public List<Post> listNewPost { get; set; } = default!;
+
         public List<Image> listImage { get; set; } = default!;
 
 
@@ -35,6 +37,7 @@ namespace Project_PRN221.Pages
             listPostPremierLeague = dbContext.Posts.Where(x => x.IdCategory == 6).Take(3).ToList();
             listPostLaLiga = dbContext.Posts.Where(x => x.IdCategory == 7).Take(3).ToList();
             listPostSeriA = dbContext.Posts.Where(x => x.IdCategory == 8).Take(3).ToList();
+            listNewPost = dbContext.Posts.Take(6).ToList();
             listImage = dbContext.Images.ToList();
         }
     }

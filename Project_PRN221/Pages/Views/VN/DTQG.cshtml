@@ -136,7 +136,7 @@
                 <div class="col-md-9 left">
                     @foreach (var dtqgNews in Model.listPostShow)
                     {
-                        <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
+                        <a asp-page="/Views/Home/DetailNews" asp-route-id="@dtqgNews.IdPost">
                             <div class="khungNews">
                                 <div class="row">
                                     <div class="col-md-4 image">
@@ -167,18 +167,24 @@
                 </div>
                 <div class="col-md-3 right">
                     <h1>Tin mới nhất</h1>
-
-                    <a href="/LoadDetailNews/ShowDetailNews?id=IdPost">
-                        <div class="khungNewNews">
-
-                            <img src="~/img/Name"
+                    @foreach (var newPost in Model.listNewPost)
+                    {
+                        <a asp-page="/Views/Home/DetailNews" asp-route-id="@newPost.IdPost">
+                            <div class="khungNewNews">
+                                @foreach (var image in Model.listImage)
+                                {
+                                    @if (image.PostId == newPost.IdPost)
+                                    {
+                                        <img src="~/img/@image.Name"
                                  alt="" width="100%"
                                  height="200px">
-
-                            <h4>Title</h4>
-                        </div>
-                    </a>
+                                    }
+                                }
+                                <h4>@newPost.Title</h4>
+                            </div>
+                        </a>
                     }
+
                 </div>
             </div>
         </div>

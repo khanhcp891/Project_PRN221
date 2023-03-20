@@ -1,15 +1,14 @@
-﻿@page "/VLeague"
-@model Project_PRN221.Pages.Views.VN.V_LeagueModel
+﻿@page "/CNNews"
+@model Project_PRN221.Pages.Views.Home.ChuyenNhuongNewsModel
 @{
 }
-
 @{
     var pagingmodel = new XTL.Helpers.PagingModel()
 
             {
                 currentpage = Model.currentPage,
                 countpages = Model.countPages,
-                generateUrl = (int? p) => Url.Page("/Views/VN/V-League", new { p = p })
+                generateUrl = (int? p) => Url.Page("/Views/Home/ChuyenNhuongNews", new { p = p })
             };
 }
 
@@ -134,15 +133,15 @@
         <div id="main">
             <div class="row">
                 <div class="col-md-9 left">
-                    @foreach (var VLeagueNews in Model.listPostShow)
+                    @foreach (var CNNews in Model.listPostShow)
                     {
-                        <a asp-page="/Views/Home/DetailNews" asp-route-id="@VLeagueNews.IdPost">
+                        <a asp-page="/Views/Home/DetailNews" asp-route-id="@CNNews.IdPost">
                             <div class="khungNews">
                                 <div class="row">
                                     <div class="col-md-4 image">
                                         @foreach (var image in Model.listImage)
                                         {
-                                            @if (image.PostId == VLeagueNews.IdPost)
+                                            @if (image.PostId == CNNews.IdPost)
                                             {
                                                 <img src="~/img/@image.Name">
                                             }
@@ -151,9 +150,9 @@
                                     </div>
 
                                     <div class="col-md-8 news">
-                                        <h4>@VLeagueNews.Title</h4>
-                                        <h5>@VLeagueNews.DatePost</h5>
-                                        <h5>@VLeagueNews.Description</h5>
+                                        <h4>@CNNews.Title</h4>
+                                        <h5>@CNNews.DatePost</h5>
+                                        <h5>@CNNews.Description</h5>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +192,5 @@
 
 </body>
 </html>
-
-
 
 

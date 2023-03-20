@@ -8,6 +8,7 @@ namespace Project_PRN221.Pages.Views.QT
     {
         private readonly PRN221_SP23Context dbContext;
 
+        public List<Post> listNewPost { get; set; } = default!;
         public List<Post> listPost { get; set; } = default!;
 
         public List<Post> listPostShow { get; set; } = default!;
@@ -28,6 +29,7 @@ namespace Project_PRN221.Pages.Views.QT
         public void OnGet()
         {
             listPost = dbContext.Posts.Where(x => x.IdCategory == 7).ToList();
+            listNewPost = dbContext.Posts.Take(6).ToList();
             int totalPost = listPost.Count;
             countPages = (int)Math.Ceiling((double)totalPost / ITEM_PER_PAGE);
             listPostShow = listPost.Skip((currentPage - 1) * 2).Take(ITEM_PER_PAGE).ToList();

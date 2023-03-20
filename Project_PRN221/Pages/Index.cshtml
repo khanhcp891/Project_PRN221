@@ -117,22 +117,22 @@
                     <div class="row">
                         <div class="col-md-9 left">
 
-                            <a href="#">
+                            <a asp-page="/Views/Home/ChuyenNhuongNews">
                                 <h2>Tin chuyển nhượng</h2>
                             </a>
                             @foreach (var CNNews in Model.listPostCN)
                             {
-                                <a href="loadDe?id=${cn.idPost}">
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@CNNews.IdPost">
                                     <div class="khungNews">
                                         <div class="row">
                                             <div class="col-md-4 image">
-                                                @*<c:forEach items="${newImg}" var="ni">
-                                            <c:if test="${cn.idPost == ni.postId}">*@
-                                                <img src="img/${ni.name}"
-                                                 alt="${ni.name}">
-                                                @*</c:if>
-
-                                            </c:forEach>*@
+                                                @foreach (var image in Model.listImage)
+                                                {
+                                                    @if (CNNews.IdPost == image.PostId)
+                                                    {
+                                                        <img src="~/img/@image.Name" />
+                                                    }
+                                                }
                                             </div>
 
                                             <div class="col-md-8 news">
@@ -145,23 +145,22 @@
                                 </a>
                             }
 
-                            @*</c:forEach>*@
-                            <a href="loadBDVN">
+                            <a asp-page="/Views/Home/BDVNNews">
                                 <h2>Bóng đá Việt Nam</h2>
                             </a>
                             @foreach (var bdvn in Model.listPostBDVN)
                             {
-                                <a href="loadDe?id=${BĐVN.idPost}">
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@bdvn.IdPost">
                                     <div class="khungNews">
                                         <div class="row">
                                             <div class="col-md-4 image">
-                                                <c:forEach items="${newImg}" var="ni">
-                                                    <c:if test="${BĐVN.idPost == ni.postId}">
-                                                        <img src="img/${ni.name}"
-                                                         alt="${ni.name}">
-                                                        @* </c:if>
-
-                                                    </c:forEach>*@
+                                                @foreach (var image in Model.listImage)
+                                                {
+                                                    @if (image.PostId == bdvn.IdPost)
+                                                    {
+                                                        <img src="~/img/@image.Name">
+                                                    }
+                                                }
                                             </div>
 
                                             <div class="col-md-8 news">
@@ -174,23 +173,23 @@
                                 </a>
                             }
 
-                            @*</c:forEach>*@
-                            <a href="loadAnh">
+
+                            <a asp-page="/Views/QT/PremierLeague">
                                 <h2>Premier league</h2>
                             </a>
                             @foreach (var anh in Model.listPostPremierLeague)
                             {
-                                <a href="loadDe?id=${PL.idPost}">
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@anh.IdPost">
                                     <div class="khungNews">
                                         <div class="row">
                                             <div class="col-md-4 image">
-                                                @*<c:forEach items="${newImg}" var="ni">
-                                            <c:if test="${PL.idPost == ni.postId}">*@
-                                                <img src="img/${ni.name}"
-                                                 alt="${ni.name}">
-                                                @*</c:if>
-
-                                            </c:forEach>*@
+                                                @foreach (var image in Model.listImage)
+                                                {
+                                                    @if (image.PostId == anh.IdPost)
+                                                    {
+                                                        <img src="~/img/@image.Name">
+                                                    }
+                                                }
                                             </div>
 
                                             <div class="col-md-8 news">
@@ -203,23 +202,23 @@
                                 </a>
                             }
 
-                            @*</c:forEach>*@
-                            <a href="loadTBN">
+
+                            <a asp-page="/Views/QT/LaLiga">
                                 <h2>La Liga</h2>
                             </a>
                             @foreach (var tbn in Model.listPostLaLiga)
                             {
-                                <a href="loadDe?id=${LL.idPost}">
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@tbn.IdPost">
                                     <div class="khungNews">
                                         <div class="row">
                                             <div class="col-md-4 image">
-                                                @*<c:forEach items="${newImg}" var="ni">
-                                            <c:if test="${LL.idPost == ni.postId}">*@
-                                                <img src="img/${ni.name}"
-                                                 alt="${ni.name}">
-                                                @* </c:if>
-
-                                            </c:forEach>*@
+                                                @foreach (var image in Model.listImage)
+                                                {
+                                                    @if (image.PostId == tbn.IdPost)
+                                                    {
+                                                        <img src="~/img/@image.Name">
+                                                    }
+                                                }
                                             </div>
 
                                             <div class="col-md-8 news">
@@ -232,23 +231,23 @@
                                 </a>
                             }
 
-                            @*</c:forEach>*@
-                            <a href="loadY">
+
+                            <a asp-page="/Views/QT/SerieA">
                                 <h2>Serie A</h2>
                             </a>
                             @foreach (var serieA in Model.listPostSeriA)
                             {
-                                <a href="loadDe?id=${SA.idPost}">
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@serieA.IdPost">
                                     <div class="khungNews">
                                         <div class="row">
                                             <div class="col-md-4 image">
-                                                @*<c:forEach items="${newImg}" var="ni">
-                                            <c:if test="${SA.idPost == ni.postId}">*@
-                                                <img src="img/${ni.name}"
-                                                 alt="${ni.name}">
-                                                @*  </c:if>
-
-                                            </c:forEach>*@
+                                                @foreach (var image in Model.listImage)
+                                                {
+                                                    @if (image.PostId == serieA.IdPost)
+                                                    {
+                                                        <img src="~/img/@image.Name">
+                                                    }
+                                                }
                                             </div>
 
                                             <div class="col-md-8 news">
@@ -261,25 +260,28 @@
                                 </a>
                             }
 
-                            @*</c:forEach>*@
                         </div>
 
                         <div class="col-md-3 right">
                             <h1>Tin mới nhất</h1>
-                            @*<c:forEach items="${listNew}" var="n">*@
-                            <a href="loadDe?id=${n.idPost}">
-                                <div class="khungNewNews">
-                                    @* <c:forEach items="${newImg}" var="ni">
-                                    <c:if test="${n.idPost == ni.postId}">*@
-                                    <img src="img/${ni.name}"
-                                         alt="${ni.name}" width="100%"
+                            @foreach (var newPost in Model.listNewPost)
+                            {
+                                <a asp-page="/Views/Home/DetailNews" asp-route-id="@newPost.IdPost">
+                                    <div class="khungNewNews">
+                                        @foreach (var image in Model.listImage)
+                                        {
+                                            @if (image.PostId == newPost.IdPost)
+                                            {
+                                                <img src="~/img/@image.Name"
+                                         alt="" width="100%"
                                          height="200px">
-                                    @*</c:if>*@
-                                    @*</c:forEach>*@
-                                    <h4>${n.title}</h4>
-                                </div>
-                            </a>
-                            @*</c:forEach>*@
+                                            }
+                                        }
+                                        <h4>@newPost.Title</h4>
+                                    </div>
+                                </a>
+                            }
+                            
                         </div>
                     </div>
                 </div>
