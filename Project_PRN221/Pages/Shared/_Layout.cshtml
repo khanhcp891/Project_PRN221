@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Newtonsoft.Json;
+@using Microsoft.EntityFrameworkCore;
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Mvc;
+@using Project_PRN221.Model;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -164,35 +169,46 @@
                                     </div>
                                 </a>
                             </li>
-                            @*<c:if test="${a == null}">*@
-                            <li><a href="#" title="Đăng nhập"> Đăng nhập</a></li>
-                            <li><a href="#" title="Đăng kí"> Đăng kí</a></li>
-                            @* </c:if>
-                            <c:if test="${a != null}">*@
-                            <li>
-                                <a href="#" title="Đăng nhập">
-                                    <div class="dropdown">
-                                        <span>Name</span>
-                                        @*<c:if test="${a.isAdmin == true}">*@
-                                        <div class="dropdown-content">
-                                            <a asp-page="/Views/ManageAccount/ListAccount">Quản lí tài khoản</a><br />
-                                            <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
-                                            <a href="#">Đổi mật khẩu</a><br />
-                                            <a href="#">Trang cá nhân</a>
-                                        </div>
-                                        @*</c:if>
-                                        <c:if test="${a.isAdmin == false}">
-                                        <div class="dropdown-content">
-                                        <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
-                                        <a href="#">Đổi mật khẩu</a><br />
-                                        <a href="#">Trang cá nhân</a>
-                                        </div>
-                                        </c:if>*@
-                                        @*<a class="log" href="#">Đăng xuất</a>*@
-                                    </div>
-                                </a>
-                            </li>
-                            </c:if>
+
+                            @{
+                                //string? str = Accessor.HttpContext.Session.GetString("account");
+                                //string? str = HttpContextAccessor.HttpContext.Session.GetString("account");
+                                string? str = Context.Session.GetString("account");
+                                if (str == null)
+                                {
+                                    <li><a asp-page="/Views/Home/Login" title="Đăng nhập">Đăng nhập</a></li>
+                                    <li><a asp-page="/Views/ManageAccount/AddAccount" title="Đăng kí"> Đăng kí</a></li>
+                                }
+                                else
+                                {
+                                    Account a = JsonConvert.DeserializeObject<Account>(str);
+                                    <li>
+                                        <a href="#" title="Đăng nhập">
+                                            <div class="dropdown">
+                                                <span>@a.Name</span>
+                                                @if (a.IsAdmin == true)
+                                                {
+                                                    <div class="dropdown-content">
+                                                        <a asp-page="/Views/ManageAccount/ListAccount">Quản lí tài khoản</a><br />
+                                                        <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
+                                                        <a href="/ChangePassword/ActionChangePass">Đổi mật khẩu</a><br />
+                                                    </div>
+                                                }
+
+                                                else
+                                                {
+                                                    <div class="dropdown-content">
+                                                        <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
+                                                        <a href="/ChangePassword/ActionChangePass">Đổi mật khẩu</a><br />
+                                                    </div>
+                                                }
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a class="log" href="/Logout" title="Đăng xuất">Đăng xuất</a></li>
+                                }
+                            }
+
                         </ul>
                     </div>
 

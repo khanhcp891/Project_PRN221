@@ -9,6 +9,10 @@ builder.Services.AddDbContext<PRN221_SP23Context>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("appsettings"));
 });
+builder.Services.AddSession();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddMvc();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -24,6 +28,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 
@@ -31,4 +36,3 @@ app.MapRazorPages();
 
 app.Run();
 
-app.UseSession();

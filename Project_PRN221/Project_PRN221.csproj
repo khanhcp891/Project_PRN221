@@ -7,6 +7,60 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Views\Home\Logout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Views\Home\Logout.cshtml" />
+    <None Include="wwwroot\img\img1.png" />
+    <None Include="wwwroot\img\img10.jpg" />
+    <None Include="wwwroot\img\img11.jpg" />
+    <None Include="wwwroot\img\img12.jpg" />
+    <None Include="wwwroot\img\img13.jpg" />
+    <None Include="wwwroot\img\img14.jpg" />
+    <None Include="wwwroot\img\img15.jpg" />
+    <None Include="wwwroot\img\img16.jpg" />
+    <None Include="wwwroot\img\img17.jpg" />
+    <None Include="wwwroot\img\img18.jpg" />
+    <None Include="wwwroot\img\img19.jpg" />
+    <None Include="wwwroot\img\img2.jpg" />
+    <None Include="wwwroot\img\img20.jpg" />
+    <None Include="wwwroot\img\img21.jpg" />
+    <None Include="wwwroot\img\img22.png" />
+    <None Include="wwwroot\img\img23.jpg" />
+    <None Include="wwwroot\img\img24.jpg" />
+    <None Include="wwwroot\img\img25.jpg" />
+    <None Include="wwwroot\img\img26.png" />
+    <None Include="wwwroot\img\img27.jpg" />
+    <None Include="wwwroot\img\img28.jpg" />
+    <None Include="wwwroot\img\img29.jpg" />
+    <None Include="wwwroot\img\img3.jpeg" />
+    <None Include="wwwroot\img\img30.jpg" />
+    <None Include="wwwroot\img\img31.jpg" />
+    <None Include="wwwroot\img\img32.jpg" />
+    <None Include="wwwroot\img\img33.jpg" />
+    <None Include="wwwroot\img\img34.jpg" />
+    <None Include="wwwroot\img\img35.jpg" />
+    <None Include="wwwroot\img\img36.jpg" />
+    <None Include="wwwroot\img\img37.jpg" />
+    <None Include="wwwroot\img\img38.jpg" />
+    <None Include="wwwroot\img\img39.jpg" />
+    <None Include="wwwroot\img\img4.jpg" />
+    <None Include="wwwroot\img\img40.png" />
+    <None Include="wwwroot\img\img41.jpg" />
+    <None Include="wwwroot\img\img42.jpg" />
+    <None Include="wwwroot\img\img43.jpg" />
+    <None Include="wwwroot\img\img44.png" />
+    <None Include="wwwroot\img\img45.jpg" />
+    <None Include="wwwroot\img\img46.jpg" />
+    <None Include="wwwroot\img\img5.jpg" />
+    <None Include="wwwroot\img\img6.jpg" />
+    <None Include="wwwroot\img\img7.jpeg" />
+    <None Include="wwwroot\img\img8.jpg" />
+    <None Include="wwwroot\img\img9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.16.5" />
     <PackageReference Include="LazZiya.TagHelpers" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.14">
@@ -19,6 +73,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Views\Home\Logout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Views\Home\Logout.cshtml" />
   </ItemGroup>
 
 </Project>
