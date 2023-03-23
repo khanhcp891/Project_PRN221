@@ -36,8 +36,9 @@ namespace Project_PRN221.Pages.Views.Home
             }
             else
             {
-
+                return RedirectToPage("/Views/Home/ChangePass");
             }
+            return Page();
         }
     }
 }

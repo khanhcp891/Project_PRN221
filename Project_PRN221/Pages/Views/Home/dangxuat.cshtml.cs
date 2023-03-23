@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Project_PRN221.Pages.Views.Home
 {
-    public class LogoutModel : PageModel
+    public class dangxuatModel : PageModel
     {
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGet()
         {
             HttpContext.Session.Remove("account");
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Views/Home/Login");
         }
     }
 }

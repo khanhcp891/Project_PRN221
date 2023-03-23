@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Views\Home\Logout.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Views\Home\Logout.cshtml" />
     <None Include="wwwroot\img\img1.png" />
     <None Include="wwwroot\img\img10.jpg" />
     <None Include="wwwroot\img\img11.jpg" />
@@ -74,14 +69,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Views\Home\Logout.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Views\Home\Logout.cshtml" />
   </ItemGroup>
 
 </Project>

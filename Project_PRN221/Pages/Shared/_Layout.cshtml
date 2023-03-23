@@ -191,7 +191,8 @@
                                                     <div class="dropdown-content">
                                                         <a asp-page="/Views/ManageAccount/ListAccount">Quản lí tài khoản</a><br />
                                                         <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
-                                                        <a href="/ChangePassword/ActionChangePass">Đổi mật khẩu</a><br />
+                                                        <a asp-page="/Views/Home/ChangePass">Đổi mật khẩu</a><br />
+                                                        <a asp-page="/Views/Home/dangxuat">Logout</a><br />
                                                     </div>
                                                 }
 
@@ -199,16 +200,17 @@
                                                 {
                                                     <div class="dropdown-content">
                                                         <a asp-page="/Views/ManageNews/ListNews">Quản lí tin tức</a><br />
-                                                        <a href="/ChangePassword/ActionChangePass">Đổi mật khẩu</a><br />
+                                                        <a asp-page="/Views/Home/ChangePass">Đổi mật khẩu</a><br />
+                                                        <a asp-page="/Views/Home/dangxuat">Logout</a><br />
                                                     </div>
                                                 }
                                             </div>
                                         </a>
                                     </li>
-                                    <li><a class="log" href="/Logout" title="Đăng xuất">Đăng xuất</a></li>
+                                    <li><a asp-page="/Views/Home/Logout">Đăng xuất</a></li>
                                 }
                             }
-
+                            @*class="log"*@
                         </ul>
                     </div>
 
