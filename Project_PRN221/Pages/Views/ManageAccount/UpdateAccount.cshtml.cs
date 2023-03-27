@@ -47,21 +47,21 @@ namespace Project_PRN221.Pages.Views.ManageAccount
             return RedirectToPage("/Views/ManageAccount/ListAccount");
         }
 
-        public async Task<IActionResult> OnPostDelete()
-        {
-            var a = await dbContext.Accounts.FirstOrDefaultAsync(x => x.IdAccount == account.IdAccount);
-            if (a != null)
-            {
-                dbContext.Accounts.Remove(a);
-                dbContext.SaveChangesAsync();
-                return RedirectToPage("/Views/ManageAccount/ListAccount");
-            }
-            else
-            {
-                return Content("Không th?y");
-            }
-            return Page();
+        //public async Task<IActionResult> OnPostDelete()
+        //{
+        //    var a = await dbContext.Accounts.FirstOrDefaultAsync(x => x.IdAccount == account.IdAccount);
+        //    if (a != null)
+        //    {
+        //        dbContext.Accounts.Remove(a);
+        //        dbContext.SaveChangesAsync();
+        //        return RedirectToPage("/Views/ManageAccount/ListAccount");
+        //    }
+        //    else
+        //    {
+        //        return Content("Không th?y");
+        //    }
+        //    return Page();
             
-        }
+        //}
     }
 }
